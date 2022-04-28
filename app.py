@@ -4,10 +4,11 @@ import requests
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 
-app = Flask(__name__)
+app = Flask(__name__) ## obect of a flask class
 
 @app.route('/',methods=['GET'])  # route to display the home page
-@cross_origin()
+@cross_origin()## not required for local system, but during the deployment of app.
+               ## If location of deployment is different from execution location of app, it wont work.
 def homePage():
     return render_template("index.html")
 
